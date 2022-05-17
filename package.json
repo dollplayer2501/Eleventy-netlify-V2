@@ -16,7 +16,7 @@
         "clean:product": "rimraf ./_production",
         "product:image:build": "npx gulp images --production",
         "product:mix:build": "npx mix --production",
-        "product:eleventy:build": "cross-env NODE_ENV=production npx @11ty/Eleventy --config=eleventy.js --quiet",
+        "product:eleventy:build": "cross-env NODE_ENV=production npx @11ty/eleventy --config=Eleventy.js --quiet",
         "product:build": "npm-run-all --serial clean:product product:image:build product:mix:build product:eleventy:build",
         "product:serve": "cd ./_production && npx serve"
     },

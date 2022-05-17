@@ -1,0 +1,10 @@
+# humans.txt on yukkuri.duelist.org
+
+## SITE
+
+* Warning: This Web site contains sexually and grotesque explicit adult oriented material that is intended only for eighteen years of age or older.
+* Name : 笑餡樓よりの眺望
+* URL : http://yukkuri.duelist.org/
+* Markup : HTML5 + CSS3
+* Contents : Reading sentences about Yukkuri Abuse
+* Release Date : 2017/09/03

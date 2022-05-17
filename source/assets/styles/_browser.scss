@@ -1,0 +1,20 @@
+//
+//
+//
+
+::selection {
+  background-color: _palette(fg-light);
+  color: _palette(fg);
+}
+
+::-webkit-scrollbar {
+  height: 0.2rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: _palette(bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: _palette(border);
+}

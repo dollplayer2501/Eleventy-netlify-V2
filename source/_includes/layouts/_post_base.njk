@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="{{ site.language }}">
+
+    <head>
+        <title>{{ collections.myCustomSort | setHeadTitle(page, site.name) | safe }}</title>
+        {% include "partials/head-meta.njk" %}
+    </head>
+
+    <body class="is-preload">
+        <!-- Page Wrapper -->
+        <div id="page-wrapper">
+
+            <!-- Header and Menu -->
+            {% set header_class_alt = '' %}
+            {# include "partials/header-and-menu.njk" #}
+
+            <!-- Wrapper -->
+            <section id="wrapper">
+
+                <!-- Banner -->
+                {% set banner_flg = false %}
+                {% include "partials/banner.njk" %}
+
+                <div class="wrapper">
+                    <div class="inner" id="markdown-body">
+                        <h2 class="major">{{ title | safe }}</h2>
+
+                        <!-- Meta info -->
+                        <ul class="meta-info">
+                        {% for item in collections.myCustomSort | getBreadcrumb(page) %}
+                            {% if loop.last %}
+                            <li>{{ item.title | safe }}</li>
+                            {% else %}
+                            <li><a href="{{ item.url }}">{{ item.title | safe }}</a></li>
+                            {% endif %}
+                        {% endfor %}
+                        </ul>
+                        <p class="meta-date">
+                            {% set created_date = 'N/A' %}
+                            {% set modified_date = 'N/A' %}
+                            {% if date %}{% set created_date = date | readableDate %}{% endif %}
+                            {% if updated %}{% set modified_date = updated | readableDate %}{% endif %}
+                            Created at {{ created_date }}, modified at {{ modified_date }}.
+                        </p>
+
+                        <!-- Main conntents -->
+                        {% block contentMain %}{% endblock %}
+
+                        <!-- Related articles -->
+                        {% set items_d = collections.myCustomSort | getCollectionsDownLevel(page) %}
+                        {% set items_s = collections.myCustomSort | getCollectionsSameLevel(page) %}
+
+                        {% if 0 < items_d.length or 0 < items_s.length %}
+                        <section class="contents-list">
+                            <hr />
+                            <h2>Related articles...</h2>
+                            <ol>
+                            {% if 0 < items_d.length %}
+                                {% for item in items_d %}
+                                    <li><a href="{{ item.url }}">{{ item.title | safe }}</a></li>
+                                {% endfor %}
+                            {% else %}
+                                {% for item_s in items_s %}
+                                <li>
+                                    {% if item_s.active %}
+                                    <span class="active">{{ item_s.title | safe }}</span>
+                                    {% else %}
+                                    <a href="{{ item_s.url }}">{{ item_s.title | safe }}</a>
+                                    {% endif %}
+                                </li>
+                                {% endfor %}
+                            {% endif %}
+                            </ol>
+                        </section>
+                        {% endif %}
+
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Footer -->
+            {# set my_position, 'list' or 'article' #}
+            {% include "partials/footer.njk" %}
+        </div>
+
+        <!-- Scripts -->
+        {% include "partials/scripts.njk" %}
+    </body>
+</html>

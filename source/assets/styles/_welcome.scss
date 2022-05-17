@@ -1,0 +1,22 @@
+//
+//
+//
+
+section#two {
+
+  p {
+    margin-bottom: 1.0em;
+    padding-bottom: 0;
+  }
+
+  ul.site-map {
+    li a {
+      border-bottom: none;
+
+      &:hover {
+        border-bottom: dotted 1px _palette(fg-light);
+      }
+    }
+
+  }
+}

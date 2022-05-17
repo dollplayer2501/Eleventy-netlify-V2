@@ -1,0 +1,8 @@
+{% set my_position = 'article' %}
+
+{% extends "layouts/_post_base.njk" %}
+
+{% block contentMain %}
+    <!-- Main conntents, include ToC, Footer -->
+    {{ content | safe }}
+{% endblock %}

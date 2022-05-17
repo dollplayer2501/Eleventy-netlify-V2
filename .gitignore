@@ -1,0 +1,10 @@
+.DS_Store
+Thumbs.db
+.git
+
+.does-not-trash
+node_modules
+package-lock.json
+
+_develop
+_production

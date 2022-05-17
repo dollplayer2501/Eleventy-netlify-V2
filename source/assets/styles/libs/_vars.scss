@@ -1,0 +1,105 @@
+// Misc.
+$misc: ( //
+  z-index-base: 10000,
+  max-wrapper-styles: 6);
+
+// Duration.
+$duration: ( //
+  menu: 0.35s,
+  transition: 0.2s);
+
+// Size.
+$size: ( //
+  border-radius: 5px,
+  element-height: 2.75em,
+  element-margin: 2em,
+  inner: 55em,
+  section-spacing: ( //
+    large: 3em,
+    medium: 2em,
+    small: 1.75em),
+  wrapper-edges: //
+  (large: 6.5em,
+    medium: 4.75em,
+    small: 2.5em));
+
+// Font.
+$font: ( //
+  family: ( //
+    'Raleway',
+    'ui-sans-serif',
+    'system-ui',
+    '-apple-system',
+    'BlinkMacSystemFont',
+    'Segoe UI',
+    'Roboto',
+    'Helvetica Neue',
+    'Arial',
+    'Noto Sans',
+    'sans-serif',
+    // 'Apple Color Emoji',
+    // 'Segoe UI Emoji',
+    'Segoe UI Symbol',
+    // 'Noto Color Emoji'
+  ),
+  family-fixed: ( //
+    'Courier New',
+    monospace),
+  family-heading: ( //
+    'Raleway',
+    'ui-sans-serif',
+    'system-ui',
+    '-apple-system',
+    'BlinkMacSystemFont',
+    'Segoe UI',
+    'Roboto',
+    'Helvetica Neue',
+    'Arial',
+    'Noto Sans',
+    'sans-serif',
+    // 'Apple Color Emoji',
+    // 'Segoe UI Emoji',
+    'Segoe UI Symbol',
+    // 'Noto Color Emoji'
+  ),
+
+  weight: 300,
+  weight-bold: 600,
+  weight-heading: 200,
+  weight-heading-bold: 700,
+  kern-heading: 0.1em,
+);
+
+// Palette.
+
+//  'hexa-brown-dark':   '#6a524a' rgb(106,82,74),
+//  'hexa-brown-middle': '#a69e8d' rgb(166,158,141),
+//  'hexa-brown-light':  '#e9e7e3' rgb(233,231,227),
+//  'hexa-red':          '#d25349' rgb(210,83,73),
+//  'hexa-blue':         '#7cbbbb' rgb(124,187,187),
+//  'hexa-yellow':       '#d2c38e' rgb(210,195,142)
+
+$palette: ( //
+  bg: rgb(233, 231, 227),
+  fg: rgb(106, 82, 74),
+  fg-bold: rgb(106, 82, 74),
+  fg-light: rgb(210, 83, 73),
+  border: rgba(210, 83, 73, 0.5),
+  border-bg: rgba(210, 83, 73, 0.05),
+  border2: #ff00ff,
+  border2-bg: rgb(210, 83, 73),
+  accent: rgb(233, 231, 227),
+);
+
+// Morry adding
+
+$background-image: '../../images/IMG_3989-L.jpg';
+
+$bg-image: ( //
+  image: '../../images/IMG_3989-L.jpg',
+  gradient-from: 0.4,
+  gradient-to: 0.4,
+  position: bottom,
+);
+
+//

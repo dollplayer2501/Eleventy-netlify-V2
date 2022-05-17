@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Twitter",
+    "url": "https://twitter.com/dollplayer2501",
+    "fontawesome": "fa-twitter-square"
+  },
+  {
+    "name": "Facebook",
+    "url": "https://twitter.com/dollplayer2501",
+    "fontawesome": "fa-facebook-square"
+  },
+  {
+    "name": "GitHub",
+    "url": "https://github.com/dollplayer2501",
+    "fontawesome": "fa-github-square"
+  },
+  {
+    "name": "SlideShare",
+    "url": "https://www.slideshare.net/dollplayer2501",
+    "fontawesome": "fa-slideshare"
+  },
+  {
+    "name": "Steam",
+    "url": "https://steamcommunity.com/id/preg_match_all/",
+    "fontawesome": "fa-steam-square"
+  }
+]

@@ -1,0 +1,52 @@
+[
+    {
+        "name": "Eleventy",
+        "description": "A simpler static site generator.",
+        "url": "https://www.11ty.dev/"
+  },
+    {
+        "name": "Learn Eleventy From Scratch",
+        "description": "This content is likely out of date, but I learned 11ty in this contents.",
+        "url": "https://piccalil.li/course/learn-eleventy-from-scratch/"
+  },
+    {
+        "name": "Laravel Mix",
+        "description": "An elegant wrapper around Webpack for the 80% use case.",
+        "url": "https://laravel-mix.com/"
+  },
+    {
+        "name": "gulp.js",
+        "description": "A toolkit to automate & enhance your workflow.",
+        "url": "https://gulpjs.com/"
+  },
+    {
+        "name": "Nunjucks",
+        "description": "A rich and powerful templating language for JavaScript.",
+        "url": "https://mozilla.github.io/nunjucks/"
+  },
+    {
+        "name": "SCSS",
+        "description": "Syntactically Awesome Style Sheets.",
+        "url": "https://sass-lang.com/"
+  },
+    {
+        "name": "HTML5 UP!",
+        "description": "Responsive HTML5 and CSS3 Site Templates.",
+        "url": "https://html5up.net/"
+  },
+    {
+        "name": "Fred's ImageMagick Scripts",
+        "description": "VINTAGE1: Applies a a classic vintage effect to an image.",
+        "url": "http://www.fmwconcepts.com/imagemagick/vintage1/index.php"
+  },
+    {
+        "name": "GitHub",
+        "description": "This url is the repository of this site",
+        "url": "https://github.com/dollplayer2501/dollplayer2501-eleventy-netlify"
+  },
+    {
+        "name": "Netlify",
+        "description": "Develop and deploy the best web experiences in record time.",
+        "url": "https://www.netlify.com/"
+  }
+]

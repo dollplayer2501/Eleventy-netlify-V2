@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="{{ site.language }}">
+
+    <head>
+        <title>{{ collections.myCustomSort | setHeadTitle(page, site.name) | safe }}</title>
+        {% include "partials/head-meta.njk" %}
+    </head>
+
+    <body class="is-preload">
+        <!-- Page Wrapper -->
+        <div id="page-wrapper">
+
+            <!-- Header and Menu -->
+            {% set header_class_alt = 'alt' %}
+            {# include "partials/header-and-menu.njk" #}
+
+            <!-- Banner -->
+            {% set banner_flg = true %}
+            {% include "partials/banner.njk" %}
+
+            <!-- Wrapper -->
+            <section id="wrapper">
+
+                <!-- One -->
+                {% set item = collections.contentsSectionsWelcome[0] %}
+                <section id="one" class="wrapper spotlight style1">
+                    <div class="inner">
+                        <img class="image" src="/images/{{ item.data.image }}" alt="" />
+                        <div class="content">
+                            <h2 class="major">{{ item.data.title }}</h2>
+                            {{ item.templateContent | safe }}
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Two -->
+                {% set item = collections.contentsSectionsWelcome[1] %}
+                <section id="two" class="wrapper alt spotlight style2">
+                    <div class="inner">
+                        <img class="image" src="/images/{{ item.data.image }}" alt="" />
+                        <div class="content">
+                            <h2 class="major">{{ item.data.title }}</h2>
+                            {{ item.templateContent | safe }}
+                            <ul class="site-map">
+                                {% for item in collections.myCustomSort | getCollectionsWelcome() %}
+                                <li><a href="{{ item.url }}">{{ item.title | safe }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+            </section>
+
+            <!-- Footer -->
+            {% set my_position = 'welcome' %}
+            {% include "partials/footer.njk" %}
+        </div>
+
+        <!-- Scripts -->
+        {% include "partials/scripts.njk" %}
+    </body>
+</html>

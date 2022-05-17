@@ -1,0 +1,11 @@
+    {% if banner_flg %}<section id="banner">{% else %}<header>{% endif %}
+        <div class="inner">
+            <h2><a href="/">{{ site.name }}</a></h2>
+            <p>{{ site.description | safe }}</p>
+        </div>
+    {% if banner_flg %}</section>{% else %}</header>{% endif %}
+
+{# 上記の違いは、
+    アニメーション
+    初期表示無し、スクロールでヘッダが表示（main.js）
+ #}

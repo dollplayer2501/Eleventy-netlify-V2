@@ -148,11 +148,12 @@
     margin: 4.0em 0 5.0em 0;
     padding: 0;
     line-height: 1.4;
+    font-size: 0.9em;
 
     h2 {
       margin-bottom: 0;
       padding-bottom: 0.5em;
-      font-size: 1.2em;
+      font-size: 1.4em;
     }
 
     ol {
@@ -161,7 +162,6 @@
       margin-bottom: 0;
       padding-bottom: 0;
       list-style-type: lower-roman;
-      font-size: 0.9em;
     }
 
     li {
@@ -193,7 +193,7 @@
   // Footnote
   //
 
-  p sup.footnote-ref a, p a.footnote-backref {
+  sup.footnote-ref a, p a.footnote-backref {
     border-bottom: none;
 
     &:hover {
@@ -201,7 +201,7 @@
     }
   }
 
-  p sup.footnote-ref {
+  sup.footnote-ref {
     font-size: 1.0em;
     top: -0.2em;
     font-weight: bold;

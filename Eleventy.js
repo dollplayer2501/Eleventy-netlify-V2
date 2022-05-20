@@ -56,18 +56,17 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.addFilter('setHeadTitle', filters.setHeadTitle);
     eleventyConfig.addFilter('getCollectionsWelcome', filters.getCollectionsWelcome);
-    eleventyConfig.addFilter('getCollectionsDownLevel', filters.getCollectionsDownLevel);
-    eleventyConfig.addFilter('getCollectionsSameLevel', filters.getCollectionsSameLevel);
-    eleventyConfig.addFilter('getParentFromChild', filters.getParentFromChild);
+    eleventyConfig.addFilter('getCollectionsRelatedArticles', filters.getCollectionsRelatedArticles);
     eleventyConfig.addFilter('getCollectionsFooter', filters.getCollectionsFooter);
     eleventyConfig.addFilter('getBreadcrumb', filters.getBreadcrumb);
+    eleventyConfig.addFilter('setMyCustomOrder', filters.setMyCustomOrder);
 
     //
     //
     //
 
     var collectionArray = [
-        { collectionArray_name: 'myCustomSort', collectionArray_path: './source/contents/**/*.md' },
+        // { collectionArray_name: 'myCustomSort', collectionArray_path: './source/contents/**/*.md' },
         { collectionArray_name: 'contentsSectionsWelcome', collectionArray_path: './source/contents-sections/welcome-*.md' },
         { collectionArray_name: 'contentsSectionsWhoAmI', collectionArray_path: './source/contents-sections/who_am_i-*.md' },
     ];

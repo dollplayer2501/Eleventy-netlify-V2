@@ -2,7 +2,7 @@
 <html lang="{{ site.language }}">
 
     <head>
-        <title>{{ collections.myCustomSort | setHeadTitle(page, site.name) | safe }}</title>
+        <title>{{ collections.all | setMyCustomOrder | setHeadTitle(page, site.name) | safe }}</title>
         {% include "partials/head-meta.njk" %}
     </head>
 
@@ -27,7 +27,7 @@
 
                         <!-- Meta info -->
                         <ul class="meta-info">
-                        {% for item in collections.myCustomSort | getBreadcrumb(page) %}
+                        {% for item in collections.all | setMyCustomOrder | getBreadcrumb(page) %}
                             {% if loop.last %}
                             <li>{{ item.title | safe }}</li>
                             {% else %}
@@ -47,30 +47,12 @@
                         {% block contentMain %}{% endblock %}
 
                         <!-- Related articles -->
-                        {% set items_d = collections.myCustomSort | getCollectionsDownLevel(page) %}
-                        {% set items_s = collections.myCustomSort | getCollectionsSameLevel(page) %}
-
-                        {% if 0 < items_d.length or 0 < items_s.length %}
-                        <section class="contents-list">
+                        {% set items = collections.all | setMyCustomOrder | getCollectionsRelatedArticles(page) %}
+                        {% if 0 < items.length %}
+                        <section class="related-articles">
                             <hr />
                             <h2>Related articles...</h2>
-                            <ol>
-                            {% if 0 < items_d.length %}
-                                {% for item in items_d %}
-                                    <li><a href="{{ item.url }}">{{ item.title | safe }}</a></li>
-                                {% endfor %}
-                            {% else %}
-                                {% for item_s in items_s %}
-                                <li>
-                                    {% if item_s.active %}
-                                    <span class="active">{{ item_s.title | safe }}</span>
-                                    {% else %}
-                                    <a href="{{ item_s.url }}">{{ item_s.title | safe }}</a>
-                                    {% endif %}
-                                </li>
-                                {% endfor %}
-                            {% endif %}
-                            </ol>
+                            {{ items | safe }}
                         </section>
                         {% endif %}
 
@@ -80,7 +62,6 @@
             </section>
 
             <!-- Footer -->
-            {# set my_position, 'list' or 'article' #}
             {% include "partials/footer.njk" %}
         </div>
 

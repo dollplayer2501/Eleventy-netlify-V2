@@ -1,5 +1,3 @@
-{% set my_position = 'article' %}
-
 {% extends "layouts/_post_base.njk" %}
 
 {% block contentMain %}
@@ -8,9 +6,9 @@
 
     <section id="who-am-i">
     {% for item in collections.contentsSectionsWhoAmI %}
-    <h3><sup>#{{loop.index}}</sup> {{item.data.title|safe}}</h3>
-<h4>{{item.data.description|safe}}</h4>
-{{ item.templateContent | safe }}
+        <h3><sup>#{{loop.index}}</sup> {{item.data.title|safe}}</h3>
+        <h4>{{item.data.description|safe}}</h4>
+        {{ item.templateContent | safe }}
     {% endfor %}
     </section>
 

@@ -2,7 +2,7 @@
 <html lang="{{ site.language }}">
 
     <head>
-        <title>{{ collections.myCustomSort | setHeadTitle(page, site.name) | safe }}</title>
+        <title>{{ collections.all | setMyCustomOrder | setHeadTitle(page, site.name) | safe }}</title>
         {% include "partials/head-meta.njk" %}
     </head>
 
@@ -42,7 +42,7 @@
                             <h2 class="major">{{ item.data.title }}</h2>
                             {{ item.templateContent | safe }}
                             <ul class="site-map">
-                                {% for item in collections.myCustomSort | getCollectionsWelcome() %}
+                                {% for item in collections.all | setMyCustomOrder | getCollectionsWelcome() %}
                                 <li><a href="{{ item.url }}">{{ item.title | safe }}</a></li>
                                 {% endfor %}
                             </ul>
@@ -53,7 +53,6 @@
             </section>
 
             <!-- Footer -->
-            {% set my_position = 'welcome' %}
             {% include "partials/footer.njk" %}
         </div>
 

@@ -4,28 +4,34 @@
   "eleventyExcludeFromCollections": true
 }
 ---
-<?xml version="1.0" encoding="utf-8"?>
+{# <?xml version="1.0" encoding="utf-8"?> #}
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>{{ site.name }}</title>
     <subtitle>{{ site.description | safe }}</subtitle>
     <link href="{{ site.url }}{{ permalink }}" rel="self" />
     <link href="{{ site.url }}" />
-    <updated>{{ collections.myCustomSort | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+    <updated>{{ collections.all | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
     <id>{{ site.url }}</id>
     <author>
         <name>{{ site.author.name }}</name>
-        <email>{{ site.author.email }}</email>
+        {# <email>{{ site.author.email }}</email> #}
     </author>
-{%- for post in collections.myCustomSort -%}
-    {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(site.url) }}{% endset %}
+{%- for post in collections.all -%}
+    {%- if '' != post.url -%}
+        {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(site.url) }}{% endset %}
     <entry>
-        <title>{{ post.data.title }}</title>
+        <title>{{ post.data.title | escape }}</title>
         <link href="{{ absolutePostUrl }}"/>
         <updated>{{ post.date | dateToRfc3339 }}</updated>
         <id>{{ absolutePostUrl }}</id>
+        <author>
+            <name>{{ site.author.name }}</name>
+        </author>
         <content type="html"><![CDATA[
-{{post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}
+{#- I don't think "htmlToAbsoluteUrls(absolutePostUrl)"" function is effective in a Japanese environment. -#}
+{{- post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) -}}
         ]]></content>
     </entry>
-{%- endfor -%}
+    {%- endif -%}
+{%- endfor %}
 </feed>

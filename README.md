@@ -47,6 +47,7 @@ When you write an article after building a local environment, it is recommended 
 
 - [Eleventy, a simpler static site generator](https://www.11ty.dev/)
 - [Nunjucks](https://mozilla.github.io/nunjucks/)
+- (BrowserSync)
 
 To avoid cluttering the description in the template engine, I use [Eleventy's filtering feature](https://www.11ty.dev/docs/filters/).
 

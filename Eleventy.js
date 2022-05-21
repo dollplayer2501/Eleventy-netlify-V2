@@ -84,6 +84,7 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.addShortcode('youtubeEmbed', shortcodes.youtubeEmbed);
     eleventyConfig.addShortcode('nicovideoEmbed', shortcodes.nicovideoEmbed);
+    eleventyConfig.addShortcode('imageEmbed', shortcodes.imageEmbed);
 
     //
     //

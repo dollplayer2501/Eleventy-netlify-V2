@@ -20,5 +20,10 @@ module.exports = {
             <script type="application/javascript" src="https://embed.nicovideo.jp/watch/${id}/script?w=400&h=225"></script>
             <noscript><a href="https://www.nicovideo.jp/watch/${id}">${comment}</a></noscript>
           </span>`;
+    },
+    //
+    imageEmbed: function (id) {
+        // The size of the image is managed only by the height in _markdown.scss
+        return `<span class="image"><img src="/images/${id}"></span>`;
     }
 };

@@ -3,16 +3,11 @@
             <h2 class="major">More information...</h2>
 
             <div class="left-side">
+                <!-- Site map -->
                 <h3>Site map...</h3>
                 <ul class="site-map">
-                    {% for item in collections.all | setMyCustomOrder | getCollectionsFooter(page) %}
-                    <li>
-                        {% if item.active %}
-                            <span class="active">{{ item.title | safe }}</span>
-                        {% else %}
-                            <a href="{{ item.url }}">{{ item.title | safe }}</a>
-                        {% endif %}
-                    </li>
+                    {% for item in collections.all | setMyCustomOrder | getCollectionsFooter(page) -%}
+                    <li>{% if item.active %}<span class="active">{{ item.title | safe }}</span>{% else %}<a href="{{ item.url }}">{{ item.title | safe }}</a>{% endif %}</li>
                     {% endfor %}
                     <li><a href="/feed.xml">RSS</a></li>
                     <li><a href="/sitemap.xml">Sitemap</a></li>
@@ -20,6 +15,7 @@
             </div>
 
             <div class="right-side">
+                <!-- Who am I -->
                 <h3>Who am I...</h3>
                 <img class="image" src="/images/{{ site.author.avator }}" alt="" style="margin-top:0.4em;max-height:3.0em;" />
                 <p>
@@ -30,6 +26,7 @@
             </div>
 
             <div>
+                <!-- Special thanks -->
                 <h3>Special thanks...</h3>
                 <p>
                     {% for item in thanks %}<a href="{{ item.url }}" title="{{ item.description | safe }}">{{ item.name | safe }}</a>{% if loop.last %}.{% else %}, {% endif %}{% endfor %}
@@ -43,3 +40,9 @@
 
         </div>
     </section>
+
+<!--
+todo 2022-05-22:
+feed.xml, sitemap.xml, who_am_i are to _data/site.json, url and title
+copyrigh is thinking now...
+-->

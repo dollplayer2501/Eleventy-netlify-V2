@@ -1,10 +1,16 @@
-# humans.txt on yukkuri.duelist.org
+# humans.txt on dollplayer2501.netlify.app
 
 ## SITE
 
-* Warning: This Web site contains sexually and grotesque explicit adult oriented material that is intended only for eighteen years of age or older.
-* Name : 笑餡樓よりの眺望
-* URL : http://yukkuri.duelist.org/
+* Name : unlimited text works, the 4th.
+* URL : https://dollplayer2501.netlify.app/
 * Markup : HTML5 + CSS3
-* Contents : Reading sentences about Yukkuri Abuse
-* Release Date : 2017/09/03
+* Technology : Eleventy
+* Contents : 駄文
+* Release Date : 2022/05/17
+
+## PERSONAL
+
+* Name : Morry Masahiquo
+* Job : 自称、電算職・IT土方
+* Twitter : @dollplayer2501

@@ -2,21 +2,54 @@
 //
 //
 
-section#two {
-
+section#two, section#three {
   p {
     margin-bottom: 1.0em;
     padding-bottom: 0;
   }
+}
 
-  ul.site-map {
-    li a {
+section#two ul.site-map {
+  li a {
+    border-bottom: none;
+
+    &:hover {
+      border-bottom: dotted 1px _palette(fg-light);
+    }
+  }
+}
+
+section#three ul.recently li {
+  float: right;
+  clear: right;
+  margin-bottom: 0.5em;
+  padding-bottom: 0;
+  line-height: 1.2;
+  list-style-type: none;
+
+  a {
+    border-bottom: dotted 1px _palette(fg-light);
+
+    &:hover {
+      border-bottom: none;
+    }
+  }
+
+  span.small-1, span.small-2 {
+    a {
       border-bottom: none;
 
       &:hover {
         border-bottom: dotted 1px _palette(fg-light);
       }
     }
+  }
 
+  span.small-1 {
+    font-size: 0.9em;
+  }
+
+  span.small-2 {
+    font-size: 0.8em;
   }
 }

@@ -5,14 +5,13 @@
 
 [Eleventy-url]: https://www.11ty.dev/
 
-**Later I will write the details.**
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/4e9ef566-2b94-44b6-af12-7f84524cc2d7/deploy-status)](https://app.netlify.com/sites/dollplayer2501/deploys)
 
 [Demo site (unlimited text works, the 4th.)](https://dollplayer2501.netlify.app/)
 
 
-# Getting Started
+## Getting Started
 
 
     git clone git@github.com:dollplayer2501/Eleventy-netlify-V2.git any-path-name
@@ -39,11 +38,15 @@
 
 When you write an article after building a local environment, it is recommended to run `npm run develop:eleventy:watach` to write the article.
 
+**Notes for me !**
 
-# Features
+When developing a filter, `npx @11ty/eleventy --config=Eleventy.js --quiet` or `npm run develop:eleventy:build`. I feel that this method is safer.
 
 
-## Eleventy
+## Features
+
+
+### Eleventy
 
 - [Eleventy, a simpler static site generator](https://www.11ty.dev/)
 - [Nunjucks](https://mozilla.github.io/nunjucks/)
@@ -68,7 +71,7 @@ Markdown uses the following npm packages.
 [Here](https://dollplayer2501.netlify.app/test-data/child01/) is the sample page for the example above.
 
 
-## Laravel Mix
+### Laravel Mix
 
 - Compiling SCSS
 - Passthrough file/directry copy, also possible with Eleventy, see [Passthrough File Copy - Eleventy](https://www.11ty.dev/docs/copy/)
@@ -77,7 +80,7 @@ Regarding SCSS, I'm using responsive HTML5 and CSS3 site templates, [Solid State
 I had the option to use Webpack, but I couldn't compile with SCSS and I could compile with Laravel Mix, so I used it.
 
 
-## Gulp
+### Gulp
 
 - [gulp-libsquoosh](https://www.npmjs.com/package/gulp-libsquoosh)
 

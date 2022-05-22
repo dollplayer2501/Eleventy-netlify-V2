@@ -55,7 +55,8 @@ module.exports = function (eleventyConfig) {
     //
 
     eleventyConfig.addFilter('setHeadTitle', filters.setHeadTitle);
-    eleventyConfig.addFilter('getCollectionsWelcome', filters.getCollectionsWelcome);
+    eleventyConfig.addFilter('getCollectionsWelcomeMainContents', filters.getCollectionsWelcomeMainContents);
+    eleventyConfig.addFilter('getCollectionsWelcomeRecentUpdated', filters.getCollectionsWelcomeRecentUpdated);
     eleventyConfig.addFilter('getCollectionsRelatedArticles', filters.getCollectionsRelatedArticles);
     eleventyConfig.addFilter('getCollectionsFooter', filters.getCollectionsFooter);
     eleventyConfig.addFilter('getBreadcrumb', filters.getBreadcrumb);
@@ -66,7 +67,6 @@ module.exports = function (eleventyConfig) {
     //
 
     var collectionArray = [
-        // { collectionArray_name: 'myCustomSort', collectionArray_path: './source/contents/**/*.md' },
         { collectionArray_name: 'contentsSectionsWelcome', collectionArray_path: './source/contents-sections/welcome-*.md' },
         { collectionArray_name: 'contentsSectionsWhoAmI', collectionArray_path: './source/contents-sections/who_am_i-*.md' },
     ];
@@ -76,6 +76,22 @@ module.exports = function (eleventyConfig) {
                 .getFilteredByGlob(element.collectionArray_path)
                 .sort((a, b) => Number(a.data.order) > Number(b.data.order) ? 1 : -1);
         });
+    });
+
+    // If 'updated' in *.md exists, sort it in descending order.
+    //   If you use 'date', 11ty will see the date of the file's date.
+    //   I wanted to avoid it. Therefore, I explicitly use 'updated'.
+    eleventyConfig.addCollection('myCustomSortRecentUpdated', function (collectionApi) {
+        return collectionApi
+            .getAll()
+            .filter(function (value) {
+                if (null != value.data.updated) {
+                    return value;
+                }
+            })
+            .sort(function (a, b) {
+                return b.data.updated - a.data.updated;
+            });
     });
 
     //

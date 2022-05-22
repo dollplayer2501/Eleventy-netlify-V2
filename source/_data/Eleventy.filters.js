@@ -27,9 +27,8 @@ module.exports = {
     setHeadTitle: function (collections_order, me, site_name) {
         var ret = site_name;
 
-        var tmp = _getBreadcrumb(collections_order, me);
-
         // トップページの名称も習得するため、1件目は取得しない
+        var tmp = module.exports.getBreadcrumb(collections_order, me);
         for (var i = 1; i < tmp.length; i++) {
             ret += HEAD_DELIMITER + tmp[i].title;
         }
@@ -44,7 +43,7 @@ module.exports = {
     // トップページ（Welcome!/Home）の記事一覧
     //   トップページと404は除く
     //
-    getCollectionsWelcome: function (collections_order) {
+    getCollectionsWelcomeMainContents: function (collections_order) {
         var ret = [];
 
         collections_order.forEach(function (element) {
@@ -55,6 +54,57 @@ module.exports = {
                 return;
             }
             ret.push({ 'title': element.title, 'url': element.url });
+        });
+
+        return ret;
+    },
+
+    //
+    // List of latest updated articles on the top page (Welcome!/Home)
+    //
+    // トップページ（Welcome!/Home）の最新更新記事一覧
+    //
+    getCollectionsWelcomeRecentUpdated: function (collections_custom_sort, collections_all, count = 3) {
+        var ret = [];
+
+        // 必要な項目を必要な件数で取得
+        var i = 0;
+        collections_custom_sort.forEach(function (element) {
+            if (Number(count) > i++) {
+                ret.push({ 'title': element.data.title, 'url': element.url, 'updated': element.data.updated });
+                return;
+            }
+        });
+
+        // データの（トップの）親を取得、collections_allが必要
+        var tmp = module.exports.setMyCustomOrder(collections_all);
+        i = 0;
+        ret.forEach(function (element1) {
+            tmp.forEach(function (element2) {
+                if (element1.url === element2.url) {
+                    ret[i++]['order_new'] = element2.order_new;
+                }
+            });
+        });
+
+        // 親の必要なデータを取得
+        i = 0;
+        ret.forEach(function (element1) {
+            var parent_order_new = element1.order_new.substring(0, SPRINTF_LENGTH);
+            tmp.forEach(function (element2) {
+                if (parent_order_new === element2.order_new) {
+                    ret[i++]['parent'] = { 'url': element2.url, 'title': element2.title };
+                    return;
+                }
+            });
+        });
+
+        // 親と同じ場合、空白を設定
+        i = 0;
+        ret.forEach(function (element) {
+            if (element.url === element.parent.url) {
+                ret[i++]['parent'] = { 'url': '', 'title': '' };
+            }
         });
 
         return ret;
@@ -182,7 +232,41 @@ module.exports = {
     // パンくずリスト
     //
     getBreadcrumb: function (collections_order, me) {
-        return _getBreadcrumb(collections_order, me);
+        //
+        var _tmp_search = function (_arr, _url) {
+            var ret = [];
+
+            _arr.forEach(function (element) {
+                if (element.url === _url) {
+                    ret = element;
+                    return;
+                }
+            });
+
+            return ret;
+        };
+
+        var ret = [];
+
+        // 自身の独自オーダ取得
+        var tmp_order_new = _tmp_search(collections_order, me.url);
+
+        // トップの取得
+        var top = _tmp_search(collections_order, URL_WELCOME);
+        ret.push({ 'title': top.title, 'url': top.url });
+
+        // トップ以下の取得
+        for (var i = 1; i <= tmp_order_new.order_new.length / SPRINTF_LENGTH; i++) {
+            var tmp = tmp_order_new.order_new.substring(0, SPRINTF_LENGTH * i);
+            collections_order.forEach(function (element) {
+                if (element.order_new === tmp) {
+                    ret.push({ 'title': element.title, 'url': element.url });
+                    return;
+                }
+            });
+        }
+
+        return ret;
     },
 
     //
@@ -246,44 +330,3 @@ module.exports = {
         return ret;
     },
 };
-
-//
-// パンくずリスト実態
-//
-function _getBreadcrumb(_collections_order, _me) {
-    //
-    var _tmp_search = function (_arr, _url) {
-        var ret = [];
-
-        _arr.forEach(function (element) {
-            if (element.url === _url) {
-                ret = element;
-                return;
-            }
-        });
-
-        return ret;
-    };
-
-    var ret = [];
-
-    // 自身の独自オーダ取得
-    var tmp_order_new = _tmp_search(_collections_order, _me.url);
-
-    // トップの取得
-    var top = _tmp_search(_collections_order, URL_WELCOME);
-    ret.push({ 'title': top.title, 'url': top.url });
-
-    // トップ以下の取得
-    for (var i = 1; i <= tmp_order_new.order_new.length / SPRINTF_LENGTH; i++) {
-        var tmp = tmp_order_new.order_new.substring(0, SPRINTF_LENGTH * i);
-        _collections_order.forEach(function (element) {
-            if (element.order_new === tmp) {
-                ret.push({ 'title': element.title, 'url': element.url });
-                return;
-            }
-        });
-    }
-
-    return ret;
-}

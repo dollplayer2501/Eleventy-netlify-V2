@@ -42,8 +42,31 @@
                             <h2 class="major">{{ item.data.title }}</h2>
                             {{ item.templateContent | safe }}
                             <ul class="site-map">
-                                {% for item in collections.all | setMyCustomOrder | getCollectionsWelcome() %}
+                                {% for item in collections.all | setMyCustomOrder | getCollectionsWelcomeMainContents() %}
                                 <li><a href="{{ item.url }}">{{ item.title | safe }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Three -->
+                {% set item = collections.contentsSectionsWelcome[2] %}
+                <section id="three" class="wrapper spotlight style3">
+                    <div class="inner">
+                        <img class="image" src="/images/{{ item.data.image }}" alt="" />
+                        <div class="content">
+                            <h2 class="major">{{ item.data.title }}</h2>
+                            {{ item.templateContent | safe }}
+                            <ul class="recently">
+                                {% for item in collections.myCustomSortRecentUpdated | getCollectionsWelcomeRecentUpdated(collections.all, 3) %}
+                                <li>
+                                    <a href="{{ item.url }}">{{ item.title | safe }}</a>
+                                    {% if 0 < item.parent.url | length %}
+                                    <br /><span class="small-1"> » <a href="{{ item.parent.url }}">{{ item.parent.title | safe }}</a></span>
+                                    {% endif %}
+                                    <br /><span class="small-2">{{ item.updated | readableDate }}</span>
+                                </li>
                                 {% endfor %}
                             </ul>
                         </div>

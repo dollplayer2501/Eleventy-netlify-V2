@@ -2,9 +2,10 @@
 Thumbs.db
 .git
 
-.does-not-trash
 node_modules
 package-lock.json
+
+contents-draft
 
 _develop
 _production

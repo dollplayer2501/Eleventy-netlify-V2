@@ -25,5 +25,9 @@ module.exports = {
     imageEmbed: function (id) {
         // The size of the image is managed only by the height in _markdown.scss
         return `<span class="image"><img src="/images/${id}"></span>`;
-    }
+    },
+    //
+    rubyEmbed: function (text, ruby) {
+        return `<ruby>${text}<rp>(</rp><rt>${ruby}</rt><rp>)</rp></ruby>`
+    },
 };

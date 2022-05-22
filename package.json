@@ -12,6 +12,7 @@
         "develop:eleventy:build": "npx @11ty/eleventy --config=Eleventy.js",
         "develop:eleventy:watch": "npx @11ty/eleventy --serve --config=Eleventy.js",
         "develop:build-watch": "npm-run-all clean:develop develop:image:build --parallel develop:mix:watch develop:image:watch develop:eleventy:watch",
+        "develop:build": "npm-run-all clean:develop --parallel develop:image:build develop:mix:build develop:eleventy:build",
         "develop:watch": "run-p develop:mix:watch develop:image:watch develop:eleventy:watch",
         "clean:product": "rimraf ./_production",
         "product:image:build": "npx gulp images --production",

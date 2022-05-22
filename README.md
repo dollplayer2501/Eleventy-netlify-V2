@@ -37,7 +37,7 @@
     npm run product:serve
     # http://localhost:3000
 
-When you write an article after building a local environment, it is recommended to run `npm run develop:watach` to write the article.
+When you write an article after building a local environment, it is recommended to run `npm run develop:eleventy:watach` to write the article.
 
 
 # Features
@@ -63,6 +63,9 @@ Markdown uses the following npm packages.
 - [markdown-it-deflist](https://www.npmjs.com/package/markdown-it-deflist)
 - [markdown-it-footnote](https://www.npmjs.com/package/markdown-it-footnote)
 - [markdown-it-table-of-contents](https://www.npmjs.com/package/markdown-it-table-of-contents)
+- Implementation of ruby tag using [shortcodes](https://www.11ty.dev/docs/shortcodes/) instead of [markdown-it-ruby](https://www.npmjs.com/package/markdown-it-ruby)
+
+[Here](https://dollplayer2501.netlify.app/test-data/child01/) is the sample page for the example above.
 
 
 ## Laravel Mix

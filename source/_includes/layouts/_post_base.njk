@@ -2,7 +2,7 @@
 <html lang="{{ site.language }}">
 
     <head>
-        <title>{{ collections.all | setMyCustomOrder | setHeadTitle(page, site.name) | safe }}</title>
+        <title>{{ collections.all | setMyCustomOrder | setHeadTitle(page, site.name) | escape }}</title>
         {% include "partials/head-meta.njk" %}
     </head>
 
@@ -23,7 +23,7 @@
 
                 <div class="wrapper">
                     <div class="inner" id="markdown-body">
-                        <h2 class="major">{{ title | safe }}</h2>
+                        <h2 class="major">{{ title | escape }}</h2>
 
                         <!-- Meta info -->
                         <ul class="meta-info">

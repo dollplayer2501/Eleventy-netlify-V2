@@ -7,8 +7,8 @@
 
     <section id="who-am-i">
     {% for item in collections.contentsSectionsWhoAmI %}
-        <h3><sup>#{{ loop.index }}</sup> {{ item.data.title | safe }}</h3>
-        <h4>{{ item.data.description | safe }}</h4>
+        <h3><sup>#{{ loop.index }}</sup> {{ item.data.title | escape }}</h3>
+        <h4>{{ item.data.description | escape }}</h4>
         {{ item.templateContent | safe }}
     {% endfor %}
     </section>

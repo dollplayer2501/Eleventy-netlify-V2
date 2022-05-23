@@ -13,17 +13,17 @@
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
 
-    <meta name="description" content="{{ site.description | safe }}" />
+    <meta name="description" content="{{ site.description | escape }}" />
 
-    <meta property="og:site_name" content="{{ site.name }}" />
+    <meta property="og:site_name" content="{{ site.name | escape }}" />
     <meta property="og:title" content="{{ collections.all | setMyCustomOrder | setHeadTitle(page, site.name) | safe }}" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{ site.url + page.url }}" />
     <meta property="og:image" content="{{ site.url + '/images/' + site.twitter.image }}" />
-    <meta property="og:description" content="{{ site.description | safe }}" />
+    <meta property="og:description" content="{{ site.description | escape }}" />
 
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:description" content="{{ site.description | safe }}" />
+    <meta name="twitter:description" content="{{ site.description | escape }}" />
     <meta name="twitter:site" content="@{{ site.twitter.user }}" />
     <meta name="twitter:image" content="{{ site.url + '/images/' + site.twitter.image }}" />
 

@@ -5,6 +5,8 @@
 //
 const sprintf = require('sprintf-js')
     .sprintf;
+const escape = require('html-escaper')
+    .escape;
 
 //
 
@@ -296,7 +298,7 @@ module.exports = {
             if (!element.url) {
                 return;
             }
-            ret.push({ 'url': element.url, 'order_original': element.data.order, 'title': element.data.title })
+            ret.push({ 'url': element.url, 'order_original': element.data.order, 'title': escape(element.data.title) })
         });
 
         // ソートオーダーの統一化

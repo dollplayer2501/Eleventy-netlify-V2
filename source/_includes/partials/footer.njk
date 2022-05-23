@@ -9,8 +9,9 @@
                     {% for item in collections.all | setMyCustomOrder | getCollectionsFooter(page) -%}
                     <li>{% if item.active %}<span class="active">{{ item.title | safe }}</span>{% else %}<a href="{{ item.url }}">{{ item.title | safe }}</a>{% endif %}</li>
                     {% endfor %}
-                    <li><a href="/feed.xml">RSS</a></li>
-                    <li><a href="/sitemap.xml">Sitemap</a></li>
+                    {% for item in site.footer.sitemap -%}
+                    <li><a href="{{ item.url }}">{{ item.title | escape }}</a></li>
+                    {% endfor %}
                 </ul>
             </div>
 
@@ -20,8 +21,8 @@
                 <img class="image" src="/images/{{ site.author.avator }}" alt="" style="margin-top:0.4em;max-height:3.0em;" />
                 <p>
                     {{ site.author.name | escape }} aka. {{ site.twitter.user }}.<br />
-                    FYI. <a href="/who_am_i/">Who Am I? / わたしはだぁれ？</a><br />
-                    {% for item in social %}<a href="{{ item.url }}">{{ item.name | safe }}</a>{% if loop.last %}.{% else %}, {% endif %}{% endfor %}
+                    FYI. <a href="{{ site.author.FYI.url }}">{{ site.author.FYI.title | escape }}</a><br />
+                    {% for item in social %}<a href="{{ item.url }}">{{ item.name | escape }}</a>{% if loop.last %}.{% else %}, {% endif %}{% endfor %}
                 </p>
             </div>
 
@@ -35,14 +36,9 @@
 
             <ul class="copyright">
                 <li>&copy; {{ site.author.name | escape }} All rights reserved.</li>
-                <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                <li>Design &amp; template: <a href="{{ site.footer.copyright.design.url }}">{{ site.footer.copyright.design.title | escape }}</a></li>
+                <li>Site template: <a href="{{ site.footer.copyright.template.url }}">{{ site.footer.copyright.template.title | escape }}</a></li>
             </ul>
 
         </div>
     </section>
-
-<!--
-todo 2022-05-22:
-feed.xml, sitemap.xml, who_am_i are to _data/site.json, url and title
-copyrigh is thinking now...
--->

@@ -2,11 +2,15 @@
     "language": "ja",
     "name": "unlimited text works, the 4th.",
     "author": {
-        "name": "Morry Masahiquo",
+        "name": "Masahiquo, MORRY",
         "url": "https://twitter.com/dollplayer2501",
         "organization": "project2501",
         "avator": "eD3o3g7O_400x400.jpg",
-        "email": ""
+        "email": "",
+        "FYI": {
+            "url": "/who_am_i/",
+            "title": "Who Am I? / わたしはだぁれ？"
+        }
     },
     "twitter": {
         "user": "dollplayer2501",
@@ -14,5 +18,31 @@
     },
     "description": "元SIer、現在、自称、電算職・IT土方、どうでもよき事を書き綴り候らへども",
     "url": "https://dollplayer2501.netlify.app",
-    "GoogleAnalytics4": "G-J4M1D5MTT8"
+    "GoogleAnalytics4": "G-J4M1D5MTT8",
+    "footer": {
+        "sitemap": [
+            {
+                "url": "/feed.xml",
+                "title": "RSS"
+            },
+            {
+                "url": "/sitemap.xml",
+                "title": "Sitemap"
+            },
+            {
+                "url": "/humans.txt",
+                "title": "Humans TXT"
+            }
+        ],
+        "copyright": {
+            "design": {
+                "url": "http://html5up.net",
+                "title": "HTML5 UP!"
+            },
+            "template": {
+                "url": "https://github.com/dollplayer2501/Eleventy-netlify-V2",
+                "title": "Eleventy-netlify-V2"
+            }
+        }
+    }
 }

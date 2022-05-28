@@ -67,8 +67,8 @@ module.exports = function (eleventyConfig) {
     //
 
     var collectionArray = [
-        { collectionArray_name: 'contentsSectionsWelcome', collectionArray_path: './source/contents-sections/welcome-*.md' },
-        { collectionArray_name: 'contentsSectionsWhoAmI', collectionArray_path: './source/contents-sections/who_am_i-*.md' },
+        { collectionArray_name: 'contentsSectionsWelcome', collectionArray_path: './source/sections/welcome-*.md' },
+        { collectionArray_name: 'contentsSectionsWhoAmI', collectionArray_path: './source/sections/who_am_i-*.md' },
     ];
     collectionArray.forEach(function (element) {
         eleventyConfig.addCollection(element.collectionArray_name, function (collectionApi) {

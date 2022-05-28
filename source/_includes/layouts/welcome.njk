@@ -3,7 +3,8 @@
 
     <head>
         <title>{{ collections.all | setMyCustomOrder | setHeadTitle(page, site.name) | escape }}</title>
-        {% include "partials/head-meta.njk" %}
+        {% include 'partials/head-meta.njk' %}
+        {% include 'partials/meta-analytics.njk' %}
     </head>
 
     <body class="is-preload">
@@ -16,7 +17,7 @@
 
             <!-- Banner -->
             {% set banner_flg = true %}
-            {% include "partials/banner.njk" %}
+            {% include 'partials/banner.njk' %}
 
             <!-- Wrapper -->
             <section id="wrapper">
@@ -76,10 +77,10 @@
             </section>
 
             <!-- Footer -->
-            {% include "partials/footer.njk" %}
+            {% include 'partials/footer.njk' %}
         </div>
 
         <!-- Scripts -->
-        {% include "partials/scripts.njk" %}
+        {% include 'partials/scripts.njk' %}
     </body>
 </html>

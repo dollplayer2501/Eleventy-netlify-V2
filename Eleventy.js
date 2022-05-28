@@ -9,8 +9,8 @@ const sitemap = require('@quasibit/eleventy-plugin-sitemap');
 
 //
 const jsonData = require('./source/_data/site.json');
-const shortcodes = require('./source/_data/Eleventy.shortcodes.js');
-const filters = require('./source/_data/Eleventy.filters.js');
+const shortcodes = require('./source/_config/eleventy.shortcodes.js');
+const filters = require('./source/_config/eleventy.filters.js');
 
 //
 const markdownIt = require('markdown-it');

@@ -15,6 +15,11 @@ mix
     .js('source/static/assets/scripts/main.js', 'assets/scripts/main.js')
     .js('source/static/assets/scripts/util.js', 'assets/scripts/util.js')
     //
+    .webpackConfig({
+        stats: {
+            children: true,
+        },
+    })
     .sass('source/assets/styles/noscript.scss', 'assets/styles/noscript.css')
     .sass('source/assets/styles/main.scss', 'assets/styles/main.css')
     .sourceMaps(productionSourceMaps, 'inline-source-map')

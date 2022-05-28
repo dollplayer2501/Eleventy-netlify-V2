@@ -3,6 +3,7 @@
 //
 
 //
+const directoryOutputPlugin = require('@11ty/eleventy-plugin-directory-output');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const sitemap = require('@quasibit/eleventy-plugin-sitemap');
 
@@ -34,6 +35,15 @@ module.exports = function (eleventyConfig) {
     //
     //
     //
+
+    eleventyConfig.setQuietMode(true);
+    eleventyConfig.addPlugin(directoryOutputPlugin, {
+        columns: {
+            filesize: true,
+            benchmark: true,
+        },
+        warningFileSize: 400 * 1000,
+    });
 
     eleventyConfig.addPlugin(pluginRss, {
         posthtmlRenderOptions: {
@@ -171,6 +181,22 @@ module.exports = function (eleventyConfig) {
     //
     //
 
+    eleventyConfig.addPassthroughCopy({ './source/static/assets/webfonts': './assets/webfonts' });
+    eleventyConfig.addPassthroughCopy({ './source/static/assets/styles/images': './assets/styles/images' });
+    //
+    eleventyConfig.addPassthroughCopy({ './source/static/assets/styles/fontawesome-all.min.css': './assets/styles/fontawesome-all.min.css' });
+    //
+    eleventyConfig.addPassthroughCopy({ './source/static/assets/scripts/breakpoints.min.js': './assets/scripts/breakpoints.min.js' });
+    eleventyConfig.addPassthroughCopy({ './source/static/assets/scripts/browser.min.js': './assets/scripts/browser.min.js' });
+    eleventyConfig.addPassthroughCopy({ './source/static/assets/scripts/jquery.min.js': './assets/scripts/jquery.min.js' });
+    eleventyConfig.addPassthroughCopy({ './source/static/assets/scripts/jquery.scrollex.min.js': './assets/scripts/jquery.scrollex.min.js' });
+    //
+    eleventyConfig.addPassthroughCopy({ './source/static/meta/**': './' });
+
+    //
+    //
+    //
+
     return {
         markdownTemplateEngine: 'njk',
         dataTemplateEngine: 'njk',
@@ -178,7 +204,7 @@ module.exports = function (eleventyConfig) {
         dir: {
             input: './source',
             layouts: './_includes/layouts',
-            output: isProduction ? '_production' : '_develop'
+            output: isProduction ? './_production' : './_develop'
         }
     };
 };
@@ -189,7 +215,7 @@ module.exports = function (eleventyConfig) {
 
 function browserSyncReady(err, bs) {
     bs.addMiddleware('*', (req, res) => {
-        const content_404 = fs.readFileSync('_develop/404.html');
+        const content_404 = fs.readFileSync('./_develop/404.html');
         // Provides the 404 content without redirect.
         res.write(content_404);
         // Add 404 http status code in request header.

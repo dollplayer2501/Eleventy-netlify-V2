@@ -26,17 +26,17 @@ mix
     .options({
         processCssUrls: false
     })
-    .setPublicPath(outputPath)
-    //
-    .copyDirectory('source/static/assets/webfonts', path.join(outputPath, 'assets/webfonts'))
-    .copyDirectory('source/static/assets/styles/images', path.join(outputPath, 'assets/styles/images'))
-    //
-    .copy('source/static/assets/styles/fontawesome-all.min.css', path.join(outputPath, 'assets/styles/fontawesome-all.min.css'))
-    //
-    .copy('source/static/assets/scripts/breakpoints.min.js', path.join(outputPath, 'assets/scripts/breakpoints.min.js'))
-    .copy('source/static/assets/scripts/browser.min.js', path.join(outputPath, 'assets/scripts/browser.min.js'))
-    .copy('source/static/assets/scripts/jquery.min.js', path.join(outputPath, 'assets/scripts/jquery.min.js'))
-    .copy('source/static/assets/scripts/jquery.scrollex.min.js', path.join(outputPath, 'assets/scripts/jquery.scrollex.min.js'))
-    //
-    .copy('source/static/meta/**', outputPath);
+    .setPublicPath(outputPath);
+//
+// .copyDirectory('source/static/assets/webfonts', path.join(outputPath, 'assets/webfonts'))
+// .copyDirectory('source/static/assets/styles/images', path.join(outputPath, 'assets/styles/images'))
+//
+// .copy('source/static/assets/styles/fontawesome-all.min.css', path.join(outputPath, 'assets/styles/fontawesome-all.min.css'))
+//
+// .copy('source/static/assets/scripts/breakpoints.min.js', path.join(outputPath, 'assets/scripts/breakpoints.min.js'))
+// .copy('source/static/assets/scripts/browser.min.js', path.join(outputPath, 'assets/scripts/browser.min.js'))
+// .copy('source/static/assets/scripts/jquery.min.js', path.join(outputPath, 'assets/scripts/jquery.min.js'))
+// .copy('source/static/assets/scripts/jquery.scrollex.min.js', path.join(outputPath, 'assets/scripts/jquery.scrollex.min.js'))
+//
+// .copy('source/static/meta/**', outputPath);
 //

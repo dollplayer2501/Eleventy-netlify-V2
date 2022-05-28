@@ -12,10 +12,10 @@ const squoosh = require('gulp-libsquoosh');
 
 //
 const inputPath = [
-    'source/assets/images/**/*.{jpg,png,webp}',
-    'source/images/**/*.{jpg,png,webp}'
+    './source/assets/images/**/*.{jpg,png,webp}',
+    './source/images/**/*.{jpg,png,webp}'
 ];
-const outputPath = mode.production() ? '_production/images' : '_develop/images';
+const outputPath = mode.production() ? './_production/images' : './_develop/images';
 
 //
 function images_opt(done) {

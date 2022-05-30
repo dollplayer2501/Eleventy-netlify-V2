@@ -71,14 +71,16 @@ module.exports = {
 
         // 必要な項目を必要な件数で取得
         var i = 0;
-        collections_custom_sort.forEach(function (element) {
+        collections_custom_sort.some(function (element) {
             if (Number(count) > i++) {
                 ret.push({ 'title': element.data.title, 'url': element.url, 'updated': element.data.updated });
-                return;
+            } else {
+                return true;
             }
         });
 
-        // データの（トップの）親を取得、collections_allが必要
+        // データの（トップの）親を取得
+        //  親の情報も欲しいので、collections_allが必要
         var tmp = module.exports.setMyCustomOrder(collections_all);
         i = 0;
         ret.forEach(function (element1) {
@@ -93,10 +95,10 @@ module.exports = {
         i = 0;
         ret.forEach(function (element1) {
             var parent_order_new = element1.order_new.substring(0, SPRINTF_LENGTH);
-            tmp.forEach(function (element2) {
+            tmp.some(function (element2) {
                 if (parent_order_new === element2.order_new) {
                     ret[i++]['parent'] = { 'url': element2.url, 'title': element2.title };
-                    return;
+                    return true;
                 }
             });
         });
@@ -122,10 +124,10 @@ module.exports = {
 
         // 自身のオーダの取得
         var my_order_new = '';
-        collections_order.forEach(function (element) {
+        collections_order.some(function (element) {
             if (me.url === element.url) {
                 my_order_new = element.order_new;
-                return;
+                return true;
             }
         });
 
@@ -238,10 +240,10 @@ module.exports = {
         var _tmp_search = function (_arr, _url) {
             var ret = [];
 
-            _arr.forEach(function (element) {
+            _arr.some(function (element) {
                 if (element.url === _url) {
                     ret = element;
-                    return;
+                    return true;
                 }
             });
 
@@ -260,10 +262,10 @@ module.exports = {
         // トップ以下の取得
         for (var i = 1; i <= tmp_order_new.order_new.length / SPRINTF_LENGTH; i++) {
             var tmp = tmp_order_new.order_new.substring(0, SPRINTF_LENGTH * i);
-            collections_order.forEach(function (element) {
+            collections_order.some(function (element) {
                 if (element.order_new === tmp) {
                     ret.push({ 'title': element.title, 'url': element.url });
-                    return;
+                    return true;
                 }
             });
         }
@@ -281,10 +283,10 @@ module.exports = {
         var _tmp_search = function (_arr, _url) {
             var ret = [];
 
-            _arr.forEach(function (element) {
+            _arr.some(function (element) {
                 if (element.url === _url) {
                     ret = element;
-                    return;
+                    return true;
                 }
             });
 
@@ -295,10 +297,9 @@ module.exports = {
 
         // 必要な要素の抽出と選択
         collections_all.forEach(function (element) {
-            if (!element.url) {
-                return;
+            if (element.url) {
+                ret.push({ 'url': element.url, 'order_original': element.data.order, 'title': escape(element.data.title) })
             }
-            ret.push({ 'url': element.url, 'order_original': element.data.order, 'title': escape(element.data.title) })
         });
 
         // ソートオーダーの統一化
@@ -312,12 +313,11 @@ module.exports = {
                 var tmp_url = '/';
                 element1.url.split('/')
                     .forEach(function (element2) {
-                        if (0 == element2.length) {
-                            return;
+                        if (0 != element2.length) {
+                            tmp_url += element2 + '/';
+                            var tmp = _tmp_search(ret, tmp_url);
+                            tmp_order += sprintf(SPRINTF_STRING, tmp.order_original);
                         }
-                        tmp_url += element2 + '/';
-                        var tmp = _tmp_search(ret, tmp_url);
-                        tmp_order += sprintf(SPRINTF_STRING, tmp.order_original);
                     });
             }
             ret[i++]['order_new'] = tmp_order;

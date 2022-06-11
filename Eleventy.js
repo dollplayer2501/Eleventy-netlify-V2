@@ -191,6 +191,10 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy({ './source/static/assets/scripts/jquery.min.js': './assets/scripts/jquery.min.js' });
     eleventyConfig.addPassthroughCopy({ './source/static/assets/scripts/jquery.scrollex.min.js': './assets/scripts/jquery.scrollex.min.js' });
     //
+    eleventyConfig.addPassthroughCopy({ './source/assets/images/**/*.{jpg,jpeg,png,webp}': './images' });
+    eleventyConfig.addPassthroughCopy({ './source/images/**/*.{jpg,jpeg,png,webp}': './images' });
+    eleventyConfig.addPassthroughCopy({ './source/contents/**/*.{jpg,jpeg,png,webp}': './images' });
+    //
     eleventyConfig.addPassthroughCopy({ './source/static/meta/**': './' });
 
     //

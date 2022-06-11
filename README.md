@@ -82,6 +82,10 @@ I had the option to use Webpack, but I couldn't compile with SCSS and I could co
 
 ### Gulp
 
+> **Note**
+> Stop using Gulp with gulp-libsquoosh.
+> Changed the policy to compress images before registering with Eleventy.
+
 - [gulp-libsquoosh](https://www.npmjs.com/package/gulp-libsquoosh)
 
 I currently don't know how to compress the image.  

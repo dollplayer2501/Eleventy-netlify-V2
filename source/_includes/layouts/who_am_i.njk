@@ -6,11 +6,26 @@
     {{ content | safe }}
 
     <section id="who-am-i">
-    {% for item in collections.contentsSectionsWhoAmI %}
-        <h3><sup>#{{ loop.index }}</sup> {{ item.data.title | escape }}</h3>
-        <h4>{{ item.data.description | escape }}</h4>
-        {{ item.templateContent | safe }}
-    {% endfor %}
+
+        <div class="table-of-contents">
+            <h2>Table of contents...</h2>
+            <ol>
+                {% for item in collections.contentsSectionsWhoAmI %}
+                    <li>
+                        <a href="#who-am-i-{{ loop.index }}">
+                            #{{ loop.index }} {{ item.data.title | escape }} - {{ item.data.description | escape }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ol>
+        </div>
+
+        {% for item in collections.contentsSectionsWhoAmI %}
+            <h3> <a id="who-am-i-{{ loop.index }}">   <sup>#{{ loop.index }}</sup> {{ item.data.title | escape }} </a></h3>
+            <h4>{{ item.data.description | escape }}</h4>
+            {{ item.templateContent | safe }}
+        {% endfor %}
+
     </section>
 
 {% endblock %}

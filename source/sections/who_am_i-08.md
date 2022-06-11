@@ -19,8 +19,8 @@ description: ポートフォリオ的なモノが無いので説得力は無い�
 1. [Vagrant](https://www.vagrantup.com/)を知る、使う、残念ながら[Docker](https://docs.docker.com/)などコンテナ型仮想化は(ry
 1. [Gulp](https://gulpjs.com/)をベースに[Sass/SCSS](https://sass-lang.com/)、[Jade/Pug](https://pugjs.org/)などを知る、使う
 1. [Node](https://nodejs.org/en/)周りのフロントエンド系を本格的に触り始める…「フロントエンド情勢は複雑怪奇」という声明は残さない
-1. 2021年梅雨の頃、[Eleventy](https://www.11ty.dev/)による実装と公開 … **4th.**
-1. 2022年5月、全体的に見直し
+1. 2021年梅雨の頃、[Eleventy](https://www.11ty.dev/)による実装と公開 … **4th.** ver.1
+1. 2022年5月、全体的に見直し … **4th.** ver.2
 
 SIerの頃…2000年頃、固有名詞は挙げないが、ヘルプ…火消しで某就職ポータルサイトのプログラム製造に関わったのが最初かも。  
 開発言語はC言語、更に、今で言うHTMLテンプレートエンジン、それを独自関数で実装していた記憶。  

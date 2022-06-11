@@ -1,7 +1,7 @@
 ---
 order: 2
 title: Main contents...
-image: IMG_4191-S.jpg
+image: IMG_4191-S.webp
 ---
 
 「たったこれだけ？」と問われれば、「そうです」としか。  

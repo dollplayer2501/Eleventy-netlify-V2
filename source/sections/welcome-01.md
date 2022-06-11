@@ -1,7 +1,7 @@
 ---
 order: 1
 title: I am the bone of my text...
-image: IMG_0241-S.jpg
+image: IMG_0241-S.webp
 ---
 
 とか何とか、そんな立派なものじゃない…  

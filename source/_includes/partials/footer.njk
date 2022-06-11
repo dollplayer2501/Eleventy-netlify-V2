@@ -19,11 +19,13 @@
                 <!-- Who am I -->
                 <h3>Who am I...</h3>
                 <img class="image" src="/images/{{ site.author.avator }}" alt="" style="margin-top:0.4em;max-height:3.0em;" />
-                <p>
-                    {{ site.author.name | escape }} aka. {{ site.twitter.user }}.<br />
+                <p style="margin-bottom:0;">
+                    <span style="font-weight:bold;">{{ site.author.name | escape }}</span> aka. {{ site.twitter.user }}.<br />
                     FYI. <a href="{{ site.author.FYI.url }}">{{ site.author.FYI.title | escape }}</a><br />
-                    {% for item in social %}<a href="{{ item.url }}">{{ item.name | escape }}</a>{% if loop.last %}.{% else %}, {% endif %}{% endfor %}
                 </p>
+                <ul class="icons">
+                    {% for item in socials %}<li><a href="{{ item.url }}" class="icon brands {{ item.fontawesome }}"><span class="label">{{ item.name | escape }}</span></a></li>{% endfor %}
+                </ul>
             </div>
 
             <div>

@@ -66,6 +66,14 @@ section#footer .inner {
     }
   }
 
+  ul.icons {
+    li a.icon {
+      &:hover {
+        border-bottom: dotted 2px _palette(fg-light);
+      }
+    }
+  }
+
   .copyright {
     margin-top: 1.0em;
   }

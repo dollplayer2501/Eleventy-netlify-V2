@@ -3,8 +3,6 @@ title: Test data::Parent::Child03
 order: 30
 permalink: /test-data/child03/index.html
 layout: article.njk
-tags:
-  - testing
 ---
 
 積極的に楽屋裏を見せていくスタイルで。

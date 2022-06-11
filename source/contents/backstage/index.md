@@ -5,9 +5,6 @@ permalink: /backstage/index.html
 layout: list.njk
 date: 2022-06-10
 updated: 2022-06-10
-tags:
-  - root
-  - backstage
 ---
 
 このサイトの楽屋裏、つまり、フレームワークなど何のプロダクトを何故選択したのか、その結果どうだったか、などをダラダラと書いています。  

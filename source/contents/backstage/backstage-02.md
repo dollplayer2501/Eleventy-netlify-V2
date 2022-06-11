@@ -5,8 +5,6 @@ permalink: /backstage/02/index.html
 layout: list.njk
 date: 2022-06-11
 updated: 2022-06-11
-tags:
-  - backstage
 ---
 
 

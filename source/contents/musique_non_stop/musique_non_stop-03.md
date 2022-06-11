@@ -5,8 +5,6 @@ permalink: /musique_non_stop/03/index.html
 layout: article.njk
 date: 2021-06-07
 updated: 2021-07-04
-tags:
-  - musique_non_stop
 ---
 
 {% nicovideoEmbed "sm11334765", "【初音ミク】Midnight Coke【オリジナル】" %}

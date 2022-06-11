@@ -5,9 +5,6 @@ permalink: /musique_non_stop/index.html
 layout: list.njk
 date: 2021-06-07
 updated: 2021-07-04
-tags:
-  - root
-  - musique_non_stop
 ---
 
 Twitterの「固定されたツイート」に何をピン留めするか、あるいは、しないかは好みが分かれると思います。  

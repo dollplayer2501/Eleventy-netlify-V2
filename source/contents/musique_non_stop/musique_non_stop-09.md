@@ -5,8 +5,6 @@ permalink: /musique_non_stop/09/index.html
 layout: article.njk
 date: 2021-12-01
 updated: 2021-12-01
-tags:
-  - musique_non_stop
 ---
 
 {% youtubeEmbed "Fw--zRltlyE" %}

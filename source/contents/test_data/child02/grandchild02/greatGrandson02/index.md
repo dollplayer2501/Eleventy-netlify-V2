@@ -3,8 +3,6 @@ title: Test data::Parent::Child02::GrandChild02::greatGrandson02
 order: 2
 permalink: /test-data/child02/grandchild02/greatGrandson02/index.html
 layout: article.njk
-tags:
-  - testing
 ---
 
 In a style that actively shows the backstage.  

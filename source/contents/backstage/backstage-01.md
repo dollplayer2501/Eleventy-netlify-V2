@@ -5,8 +5,6 @@ permalink: /backstage/01/index.html
 layout: list.njk
 date: 2022-06-10
 updated: 2022-06-10
-tags:
-  - backstage
 ---
 
 今が2022年6月上旬で、ほぼ1年前、このサイトを立ち上げました。  

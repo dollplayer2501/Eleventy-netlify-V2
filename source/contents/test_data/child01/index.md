@@ -5,8 +5,6 @@ permalink: /test-data/child01/index.html
 layout: article.njk
 date: 2022-05-18
 updated: 2022-05-18
-tags:
-  - testing
 ---
 
 

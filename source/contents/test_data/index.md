@@ -3,9 +3,6 @@ title: Test data::Parent
 order: 97
 permalink: /test-data/index.html
 layout: list.njk
-tags:
-  - root
-  - testing
 ---
 
 In a style that actively shows the backstage.  

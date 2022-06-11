@@ -3,8 +3,6 @@ title: Test data::Parent::Child02
 order: 20
 permalink: /test-data/child02/index.html
 layout: list.njk
-tags:
-  - testing
 ---
 
 In a style that actively shows the backstage.  

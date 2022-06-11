@@ -5,8 +5,6 @@ permalink: /musique_non_stop/08/index.html
 layout: article.njk
 date: 2021-06-07
 updated: 2021-07-04
-tags:
-  - musique_non_stop
 ---
 
 以上までが「過去」になり、これ以降はリアルタイムで更新…していけるといいなぁ、です。  

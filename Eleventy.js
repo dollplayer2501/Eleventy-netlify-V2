@@ -239,6 +239,7 @@ function htmlminTransform(content, outputPath) {
             useShortDoctype: true,
             removeComments: true,
             collapseWhitespace: true,
+            minifyJS: true,
         });
         return minified;
     }

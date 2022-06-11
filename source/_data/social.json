@@ -20,6 +20,11 @@
     "fontawesome": "fa-slideshare"
   },
   {
+    "name": "Instagram",
+    "url": "https://www.instagram.com/dollplayer2501/",
+    "fontawesome": "fa-instagram-square"
+  },
+  {
     "name": "Steam",
     "url": "https://steamcommunity.com/id/preg_match_all/",
     "fontawesome": "fa-steam-square"

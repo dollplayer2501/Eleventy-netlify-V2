@@ -63,7 +63,7 @@
                                 {% for item in collections.myCustomSortRecentUpdated | getCollectionsWelcomeRecentUpdated(collections.all, 3) %}
                                 <li>
                                     <a href="{{ item.url }}">{{ item.title | safe }}</a>
-                                    {% if 0 < item.parent.url | length %}
+                                    {% if item.url != item.parent.url %}
                                     <br /><span class="small-1"> » <a href="{{ item.parent.url }}">{{ item.parent.title | safe }}</a></span>
                                     {% endif %}
                                     <br /><span class="small-2">{{ item.updated | readableDate }}</span>

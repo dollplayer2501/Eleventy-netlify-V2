@@ -103,14 +103,7 @@ module.exports = {
             });
         });
 
-        // 親と同じ場合、空白を設定
-        i = 0;
-        ret.forEach(function (element) {
-            if (element.url === element.parent.url) {
-                ret[i++]['parent'] = { 'url': '', 'title': '' };
-            }
-        });
-
+        // 親と対象投稿が同じ場合もあるので、それはNunjucksで対応する
         return ret;
     },
 

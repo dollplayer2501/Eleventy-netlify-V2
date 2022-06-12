@@ -73,6 +73,9 @@ Markdown uses the following npm packages.
 
 ### Laravel Mix
 
+> **Note**  
+> I stopped using Laravel Mix and unified Gulp to use.
+
 - Compiling SCSS
 - Passthrough file/directry copy, also possible with Eleventy, see [Passthrough File Copy - Eleventy](https://www.11ty.dev/docs/copy/)
 
@@ -82,11 +85,8 @@ I had the option to use Webpack, but I couldn't compile with SCSS and I could co
 
 ### Gulp
 
-> **Note**  
-> Stop using Gulp with gulp-libsquoosh.
-> Changed the policy to compress images before registering with Eleventy.
-
-- [gulp-libsquoosh](https://www.npmjs.com/package/gulp-libsquoosh)
-
-I currently don't know how to compress the image.  
-Is the existing method of using imagemin currently available?
+- [gulp-libsquoosh](https://www.npmjs.com/package/gulp-libsquoosh)  
+I currently don't know how to compress the image. Is the existing method of using imagemin currently available?
+- gulp-sass/sass  
+I use [`addWatchTarget`](https://www.11ty.dev/docs/watch-serve/) for the directories.
+- gulp-uglify

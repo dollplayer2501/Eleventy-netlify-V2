@@ -36,14 +36,16 @@ module.exports = function (eleventyConfig) {
     //
     //
 
-    eleventyConfig.setQuietMode(true);
-    eleventyConfig.addPlugin(directoryOutputPlugin, {
-        columns: {
-            filesize: true,
-            benchmark: true,
-        },
-        warningFileSize: 400 * 1000,
-    });
+    if (isProduction) {
+        eleventyConfig.setQuietMode(true);
+        eleventyConfig.addPlugin(directoryOutputPlugin, {
+            columns: {
+                filesize: true,
+                benchmark: true,
+            },
+            warningFileSize: 400 * 1000,
+        });
+    }
 
     eleventyConfig.addPlugin(pluginRss, {
         posthtmlRenderOptions: {
@@ -196,6 +198,13 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy({ './source/contents/**/*.{jpg,jpeg,png,webp}': './images' });
     //
     eleventyConfig.addPassthroughCopy({ './source/static/meta/**': './' });
+
+    //
+    //
+    //
+
+    eleventyConfig.addWatchTarget('./source/assets/styles/**/*');
+    eleventyConfig.setWatchThrottleWaitTime(999);
 
     //
     //

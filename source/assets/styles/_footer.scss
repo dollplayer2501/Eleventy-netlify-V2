@@ -74,6 +74,16 @@ section#footer .inner {
     }
   }
 
+  .special-thanks {
+    a {
+      border-bottom: none;
+
+      &:hover {
+        border-bottom: dotted 1px _palette(fg-light);
+      }
+    }
+  }
+
   .copyright {
     margin-top: 1.0em;
   }

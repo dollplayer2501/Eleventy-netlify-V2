@@ -100,31 +100,12 @@ function javascript(done) {
 function image(done) {
     console.log('[00:00:00] Images');
 
-    //
-    // 画像は各種ディレクトリに散らばっているが、全て`./images`に格納
-    // 本番時のみ圧縮を行う
-    //
-    // .pipe(mode.production(squoosh()))
-    //    の場合、npmスクリプトから`npm-run-all --parallel/--sequential`で
-    //    `--production`を付与しているスクリプトを起動しても`squoosh`しないので
-    //    敢えて下記の様にしている
-    //    理由不明
-    //
-
-    if (mode.production()) {
-        src(path.image)
+    src(path.image)
         .pipe(rename(function (path) {
             path.dirname = '/images';
         }))
-        .pipe(squoosh())
+        .pipe(mode.production(squoosh()))
         .pipe(dest(outputPath));
-    } else {
-        src(path.image)
-        .pipe(rename(function (path) {
-            path.dirname = '/images';
-        }))
-        .pipe(dest(outputPath));
-    }
     done();
 }
 

@@ -33,7 +33,7 @@
                 <h3>Special thanks...</h3>
                 <p>
                     {% for item in thanks %}<a href="{{ item.url }}" title="{{ item.description | escape }}">{{ item.name | escape }}</a>{% if loop.last %}.{% else %}, {% endif %}{% endfor %}<br />
-                    And last built on {{ buildInfo.time.formatted }} <a href="{{ site.footer.github }}/commit/{{ buildInfo.hash }}">{{ buildInfo.hash }}</a>.
+                    And <a href="{{ site.footer.github }}/commit/{{ buildInfo.hash }}">last built on {{ buildInfo.time.formatted }}, {{ buildInfo.hash }}</a>.
                 </p>
             </div>
 

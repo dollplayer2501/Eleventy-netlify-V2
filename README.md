@@ -1,5 +1,11 @@
 # Something like a "blog" but not a "blog"
 
+
+> [!NOTE]
+> At the end of November 2023, I made a major review of Npm packages, Gulp and Npm scripts, etc.  
+> However, this document does not cover them.
+
+
 **I built this based on [Eleventy][Eleventy-url], not to mass produce articles on blogs, but to mass produce articles on a "topic/theme".**  
 ブログで記事を量産するため、ではなく、ある「トピック/テーマ」について記事を量産するために、私は[Eleventy][Eleventy-url]をベースに、これを構築しました。
 
@@ -9,6 +15,8 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/4e9ef566-2b94-44b6-af12-7f84524cc2d7/deploy-status)](https://app.netlify.com/sites/dollplayer2501/deploys)
 
 [Demo site (unlimited text works, the 4th.)](https://dollplayer2501.netlify.app/)
+
+<img src="./screenshot..main.png" width="300"> <img src="./screenshot..sub.png" width="250">
 
 
 ## Getting Started
@@ -27,7 +35,7 @@
     # http://localhost:8080
 
     # 2. Production
-    #   Data is stored in ./any-path-name/_production
+    #   Data is stored in ./any-path-name/_product
     #   HTML, CSS, Javascript are compressed
     #   Built and published on Netlify
     #

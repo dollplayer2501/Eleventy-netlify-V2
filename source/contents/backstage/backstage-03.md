@@ -90,10 +90,10 @@ concat/連結やトランスパイルは行なっていない（勉強不足で�
 改めてまとめますと、下記の様に言えるのかなと思います…と言うか、これが自分の「型」なのかなと思います。
 
 1. Gulpなどタスクランナーはnpmスクリプトで起動  
-[cross-env](https://www.npmjs.com/package/cross-env)を使用して、`cross-env NODE_ENV=production npx gulp hoge`など、本番環境とローカル環境を分けて記述
+[cross-env](https://www.npmjs.com/package/cross-env)を使用して、`cross-env NODE_ENV=product npx gulp hoge`など、本番環境とローカル環境を分けて記述
 2. npmスクリプトの各スクリプトは、`npm-run-all`で起動順を制御
 3. `gulpfile.js`の[gulp-mode](https://www.npmjs.com/package/gulp-mode)で、npmスクリプトの引数（本番環境とローカル環境）を制御
-4. 各タスクは、例えば`mode.develop()`・`mode.production()`で、ソースマップの追加や圧縮などの処理を分ける
+4. 各タスクは、例えば`mode.develop()`・`mode.product()`で、ソースマップの追加や圧縮などの処理を分ける
 
 
 ### （余計な一言）2022年6月の時点でSass/SCSSについて書くのは抵抗が無い訳で無い、とは表立って言いませんが

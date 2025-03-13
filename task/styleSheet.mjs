@@ -8,8 +8,8 @@ import sourcemaps from 'gulp-sourcemaps';
 import { mode, outputPath, path } from './_config.mjs'
 
 
-export const styleSheet_task = function() {
-  return gulp.src(path.stylesheet.source)
+export const styleSheet_task = function(done) {
+  gulp.src(path.stylesheet.source)
     .pipe(mode.develop(sourcemaps.init()))
     .pipe(sass({
         includePaths: [
@@ -19,4 +19,5 @@ export const styleSheet_task = function() {
       }).on('error', sass.logError))
     .pipe(mode.develop(sourcemaps.write()))
     .pipe(gulp.dest(outputPath + '/assets/styles'));
+  done();
 }

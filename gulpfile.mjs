@@ -22,8 +22,8 @@ export { building_task as build };
 
 
 const watching_task = function() {
-    gulp.watch(path.stylesheet.watch, gulp.series(styleSheet_task));
-    gulp.watch(path.javascript, gulp.series(javaScript_task));
-    gulp.watch(path.image, gulp.series(imageWebp_task));
+  gulp.watch(path.stylesheet.watch, gulp.series(styleSheet_task));
+  gulp.watch(path.javascript, gulp.series(javaScript_task));
+  gulp.watch(path.image, gulp.series(imageWebp_task));
 }
 export { watching_task as watch };

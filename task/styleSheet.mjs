@@ -9,14 +9,14 @@ import { mode, outputPath, path } from './_config.mjs'
 
 
 export const styleSheet_task = function() {
-    return gulp.src(path.stylesheet.source)
-        .pipe(mode.develop(sourcemaps.init()))
-        .pipe(sass({
-            includePaths: [
-                // 'node_modules',
-            ],
-            outputStyle: mode.product() ? 'compressed' : 'expanded',
-        }).on('error', sass.logError))
-        .pipe(mode.develop(sourcemaps.write()))
-        .pipe(gulp.dest(outputPath + '/assets/styles'));
+  return gulp.src(path.stylesheet.source)
+    .pipe(mode.develop(sourcemaps.init()))
+    .pipe(sass({
+        includePaths: [
+          // 'node_modules',
+        ],
+        outputStyle: mode.product() ? 'compressed' : 'expanded',
+      }).on('error', sass.logError))
+    .pipe(mode.develop(sourcemaps.write()))
+    .pipe(gulp.dest(outputPath + '/assets/styles'));
 }

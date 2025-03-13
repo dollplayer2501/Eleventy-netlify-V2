@@ -4,8 +4,8 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "develop:ncu:check": "ncu",
-        "develop:ncu:update": "ncu -u",
+        "ncu:check": "ncu",
+        "ncu:update": "ncu -u",
         "develop:clean": "rimraf ./_develop",
         "develop:gulp:build:stylesheet": "cross-env NODE_ENV=develop npx gulp stylesheet",
         "develop:gulp:build:javascript": "cross-env NODE_ENV=develop npx gulp javascript",
@@ -50,10 +50,10 @@
         "markdown-it-deflist": "^2.1.0",
         "markdown-it-footnote": "^3.0.3",
         "markdown-it-table-of-contents": "^0.6.0",
-        "npm-check-updates": "^16.14.11",
+        "npm-check-updates": "^17.1.15",
         "npm-run-all": "^4.1.5",
-        "rimraf": "^5.0.5",
-        "serve": "^14.2.1",
+        "rimraf": "^6.0.1",
+        "serve": "^14.2.4",
         "sprintf-js": "^1.1.3"
     }
 }

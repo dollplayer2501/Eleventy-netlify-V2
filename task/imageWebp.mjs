@@ -8,7 +8,12 @@ import { outputPath, path } from './_config.mjs'
 
 
 export const imageWebp_task = function() {
-    return gulp.src(path.image, {since: gulp.lastRun(imageWebp_task)})
-        .pipe(webp())
-        .pipe(gulp.dest(outputPath + '/images'));
+  return gulp.src(path.image, {
+        since: gulp.lastRun(imageWebp_task)
+      })
+    .pipe(webp())
+    .pipe(gulp.dest(outputPath + '/images'));
 }
+
+// TODO: to webp, only product version
+

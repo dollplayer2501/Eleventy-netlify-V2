@@ -9,6 +9,7 @@ import { outputPath, path } from './_config.mjs'
 
 export const imageWebp_task = function(done) {
   gulp.src(path.image, {
+      encoding: false,
       since: gulp.lastRun(imageWebp_task)
     })
     .pipe(webp())
